@@ -47,11 +47,10 @@ export default function Home() {
   const tasaCard = (serie: string, label: string, respaldo: [string, string]) => {
     const t = tasas[serie];
     if (!t?.ultimo) return kpiCard(respaldo[0], false, respaldo[1]);
-    const [, mes, dia] = t.ultimo.fecha.split("-");
     return (
       <Kpi
         key={serie}
-        label={`${label} · ${dia}/${mes}`}
+        label={`${label} · Último dato`}
         unit="pct"
         value={t.ultimo.valor}
         digits={3}
